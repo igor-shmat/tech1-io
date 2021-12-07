@@ -3,8 +3,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTIxNjM4N
 Content-Type: application/json
 ###
 
-GET http://localhost:8080/user/name?count=0
-Authorization: Bearer yJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTIxNjM4NzI2MjM1LCJpYXQiOjE2Mzg3MjYyMzUsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.VKZ_qrKEp0pz3qfgmmDzcaozdIv16V-CmgrbdlOJnb4
+GET http://localhost:8080/user/name?count=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTIxNjM4NzI2MjM1LCJpYXQiOjE2Mzg3MjYyMzUsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.VKZ_qrKEp0pz3qfgmmDzcaozdIv16V-CmgrbdlOJnb4
 Content-Type: application/json
 ###
 

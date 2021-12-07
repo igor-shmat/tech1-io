@@ -38,6 +38,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);
     }
 
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.csrf().disable()
+//                .authorizeRequests()
+//                .antMatchers("/h2-console").permitAll()
+//                .anyRequest().authenticated()
+//                // добавили строку что бы зайти на  http://localhost:8080/h2-console/ без этого не пускает
+//                .and().headers().frameOptions().disable()
+//                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+//    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -46,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/token").permitAll()
                 .and().authorizeRequests().antMatchers("/user/**").authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                // добавили строку что бы зайти на  http://localhost:8080/h2-console/ без этого не пускает
+    // добавили строку что бы зайти на  http://localhost:8080/h2-console/ без этого не пускает
                 .and().headers().frameOptions().disable();
 
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

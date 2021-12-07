@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface UsersRepository extends JpaRepository<Users,Long > {
+public interface UsersRepository extends JpaRepository<Users, Long> {
 
-    @Query("select  count (id) from Users ")
+    @Query("select count (id) from Users ")
     long count();
 
     List<Users> findByAgeAfter(int age);
@@ -17,6 +17,6 @@ public interface UsersRepository extends JpaRepository<Users,Long > {
     @Query("select u from Users u inner join u.article c where c.color = :colorEnum")
     List<Users> getAllByColor(ColorEnum colorEnum);
 
-    @Query(nativeQuery = true, value = "SELECT * FROM Users s LIMIT = :count")
-    List<String> getAll(int count);
+    @Query("SELECT s.name FROM Users s where s.article.size = :count")
+    List<String> getUserName(int count);
 }

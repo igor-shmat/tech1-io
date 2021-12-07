@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @GetMapping("/name")
-    public List<String> getName(@RequestParam int count) {
-        return userService.getName(count);
+    public List<String> getUserName(@RequestParam int count) {
+        return userService.getUserName(count);
     }
 }
